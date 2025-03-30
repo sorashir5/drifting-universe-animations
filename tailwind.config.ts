@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				universe: {
+					point: '#1EAEDB',
+					villain: '#ea384c',
+					line: '#33C3F0',
+					glow: '#0000001a'
 				}
 			},
 			borderRadius: {
@@ -84,11 +91,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'drift': {
+					'0%, 100%': { transform: 'translate(0, 0)' },
+					'25%': { transform: 'translate(-10px, 10px)' },
+					'50%': { transform: 'translate(10px, -5px)' },
+					'75%': { transform: 'translate(-5px, -10px)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
+				},
+				'line-grow': {
+					'0%': { width: '0%', opacity: '0.3' },
+					'100%': { width: '100%', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'drift': 'drift 20s ease-in-out infinite',
+				'drift-slow': 'drift 30s ease-in-out infinite',
+				'drift-fast': 'drift 15s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'line-grow': 'line-grow 1.5s ease-out forwards'
 			}
 		}
 	},
